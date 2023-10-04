@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Self-Ordering Kiosk</title>
+        <meta name="description" content="cafe self-ordering kiosk">
+        <meta name="author" content="Natalia Walkiewicz">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+        <link rel="stylesheet" type="text/css" href="css/style_order.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/button_switch.css">
+
+        <link rel="stylesheet" href="fontello-ccfc653e/css/fontello.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Capriola&family=Poppins:wght@200;300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">    </head>
+    </head>
+    <body onload="setSwitchButtonState()">
+        <header>
+            <div class="nav nav--pages">
+                <a href="order_choice.html">
+                    <div class="nav__back">
+                        <span class="arrow--back"><</span>
+                        <span>BACK</span>
+                    </div>
+                </a>
+                <div class="nav__logo logo--home">
+                    <div class="logo--top">caffè
+                        <div class="logo--under">bellissimo</div>
+                    </div>
+                </div>
+                <div class="nav__lang">
+                    <span>ENG</span>
+                    <span class="arrow--lang">></span>
+                </div>
+            </div>
+        </header>              
+        <main>
+            <div class="main__container--page3">
+                <article class="menu__container">
+                    <div class="menu__header">Menu</div>
+                    <div id="itemList" class="offer__container"></div>
+                </article>
+                <aside class="summary__container">
+                    <div id="summary"></div>
+                    <div class="switch-button">
+                        <div class="box">
+                            <span id="here" onclick="moveLeft()">here</span>
+                            <span id="toGo" onclick="moveRight()">to go</span>
+                            <div id="boxInside"></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer>
+            <div id="total" class="footer"></div>
+        </footer>
+
+        <script src="js/script.js"></script>
+        <script src="js/script_load.js"></script>
+        <script src="js/button_switch.js"></script>
+
+    </body>
+</html>

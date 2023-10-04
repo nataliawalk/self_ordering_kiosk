@@ -1,0 +1,75 @@
+html {
+	font-size: 20px;
+}
+
+.switch-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
+    position: absolute;
+    top: calc(2rem + 80px + 1.5rem);
+    right: 4rem;
+} 
+
+.box {
+	display: inline-block;
+	width: 8rem;
+	height: 1.5rem;
+	border: 1px solid black;
+	border-radius: 1.5rem;
+	position: relative;
+	font-size: 1.1rem;
+	padding-left: 1.2rem;
+	padding-right: 0.5rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+}
+
+#boxInside {
+	background-color: black;
+	width: 5rem;
+	height: 1.9rem;
+	border-radius: 30px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+    z-index: -1;
+}
+
+#here {
+    z-index: 1;
+	color: #fff;
+}
+
+#toGo {
+	cursor: pointer;
+	margin-left: 2rem;
+}
+
+.moveLeft {
+	animation: move-left 0.2s 1 ease-out both;
+}
+
+.moveRight {
+	animation: move-right 0.2s 1 ease-out both;
+}
+
+@keyframes move-left {
+	from {
+		-webkit-transform: translateX(0px);
+	}
+	to {
+		-webkit-transform: translateX(4.7rem);
+	}
+}
+
+@keyframes move-right {
+	from {
+		-webkit-transform: translateX(4.7rem);
+	}
+	to {
+		-webkit-transform: translateX(0px);	
+	}
+}
