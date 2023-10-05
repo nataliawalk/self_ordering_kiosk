@@ -1,10 +1,13 @@
+html {
+    font-size: 20px;
+}
+
 .nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 20px;
-    min-height: 80px;
+    min-height: 4rem;
     width: 100%;
 }
 
@@ -29,7 +32,6 @@
 
 .logo--top {
     position: relative;
-    /* font-size: 60px; */
     font-size: 3em;
     font-weight: 600;
 }
@@ -37,10 +39,7 @@
 .logo--under{   
     font-family: 'Capriola', sans-serif;
     position: absolute;
-    /* font-size: 19px; */
     font-size: 0.32em;
-    /* top: 58px;
-    left: 84px; */
     top: 3em;
     left: 4.35em;
 }

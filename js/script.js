@@ -5,48 +5,45 @@ const Offer = new Map();
 const Summary = new Array();
 const SummaryQuantities = new Map();
 
+addDrinkItem("Espresso",["10 grams medium ground coffee","water","sugar(optional)"],2.5,35,"espresso");
+addDrinkItem("Espresso Lungo",["10 grams medium ground coffee","water","sugar(optional)"],2.5,110,"espresso_lungo");
+addDrinkItem("Cappuccino",["10 grams medium ground coffee","water","steamed milk","sugar(optional)"],2.5,150,"cappuccino");
+addDrinkItem("Espresso Macchiato",["10 grams medium ground coffee","water","steamed milk","sugar(optional)"],2.5,40,"espresso_macchiato");
+addDrinkItem("Caffè Shackerato",["long espresso","hazelnut syrup","hazelnuts grain","ice cubes"],4,150,"shackerato");
+addDrinkItem("Affogato",["long espresso","ice cream"],4.5,110,"affogato");
+addDrinkItem("Latte Macchiato",["10 grams medium ground coffee","water","steamed milk","sugar(optional)"],3,250,"macchiato");
+addDrinkItem("Caffe Cannelle",["espresso","cinnamon syrup","milk cream","black pepper powder","cinnamon flakes","ice cubes"],4.5,150,"cannelle");
+addDrinkItem("Iced Pistachio Coffee",["long espresso","whipped milk","pistachio cream","pistachio grain"],4.5,250,"pistacho");
+addDrinkItem("Marocchino",["espresso","chocolate sauce","cocoa powder","milk cream"],4.5,150,"marocchino");
+addDrinkItem("Pumpkin Spice Latte",["espresso","whipped milk","pumpkin puree","cinnamon","ginger","nutmeg"],4.5,250,"pumpkin");
+addDrinkItem("Lemonade",["water","sugar","lemon","mint"],3,250,"lemonade");
 
-addDrinkItem("Espresso",["10 grams medium ground coffee","water","sugar(optional)"],2.5,35,"espresso",false);
-addDrinkItem("Espresso Lungo",["10 grams medium ground coffee","water","sugar(optional)"],2.5,110,"espresso_lungo",false);
-addDrinkItem("Cappuccino",["10 grams medium ground coffee","water","steamed milk","sugar(optional)"],2.5,150,"cappuccino",false);
-addDrinkItem("Espresso Macchiato",["10 grams medium ground coffee","water","steamed milk","sugar(optional)"],2.5,40,"espresso_macchiato",false);
-addDrinkItem("Caffè Shackerato",["long espresso","hazelnut syrup","hazelnuts grain","ice cubes"],4,150,"shackerato",false);
-addDrinkItem("Affogato",["long espresso","ice cream"],4.5,110,"affogato",false);
-addDrinkItem("Latte Macchiato",["10 grams medium ground coffee","water","steamed milk","sugar(optional)"],3,250,"macchiato",false);
-addDrinkItem("Caffe Cannelle",["espresso","cinnamon syrup","milk cream","black pepper powder","cinnamon flakes","ice cubes"],4.5,150,"cannelle",false);
-addDrinkItem("Iced Pistachio Coffee",["long espresso","whipped milk","pistachio cream","pistachio grain"],4.5,250,"pistacho",false);
-addDrinkItem("Marocchino",["espresso","chocolate sauce","cocoa powder","milk cream"],4.5,150,"marocchino",false);
-addDrinkItem("Pumpkin Spice Latte",["espresso","whipped milk","pumpkin puree","cinnamon","ginger","nutmeg"],4.5,250,"pumpkin",false);
-addDrinkItem("Lemonade",["water","sugar","lemon","mint"],3,250,"lemonade",false);
-
-addFoodItem("Cornetto al Pistacchio",["flour","milk","salt","butter","egg","sugar","yeast","water","pistacchio cream"],80,50,"cornetto",false);
-addFoodItem("Sicilian Cannolo",[],80,50,"cannolo",false);
-addFoodItem("Pistachio Gelato",[],19,160,"gelato",false);
-addFoodItem("Macaroons",["ground almonds","powdered sugar","egg white","sugar","water","food colouring"],100,20,"macaroons",false);
-addFoodItem("Brownie",["butter","dark chocolate","eggs","sugar","flour","salt","hazelnuts"],50,90,"brownie",false);
-addFoodItem("Lemon Tart",[],50,90,"lemon_tart",false);
-addFoodItem("Vanilla Brioche",[],21,70,"brioche",false);
-addFoodItem("Cheesecake",[],50,90,"cheesecake",false);
+addFoodItem("Cornetto al Pistacchio",["flour","milk","salt","butter","egg","sugar","yeast","water","pistacchio cream"],80,50,"cornetto");
+addFoodItem("Sicilian Cannolo",["ricotta","flour","milk","sugar","egg","oil"],80,50,"cannolo");
+addFoodItem("Pistachio Gelato",["pistachios","milk","sugar","lemon","cornstarch"],19,160,"gelato");
+addFoodItem("Macaroons",["ground almonds","powdered sugar","egg white","sugar","water","food colouring"],100,20,"macaroons");
+addFoodItem("Brownie",["butter","dark chocolate","eggs","sugar","flour","salt","hazelnuts"],50,90,"brownie");
+addFoodItem("Lemon Tart",["flour","butter","flour","eggs","sour cream","lemon","heavy cream"],50,90,"lemon_tart");
+addFoodItem("Vanilla Brioche",["flour","sugar","salt","yeast","water","vanilla","butter","eggs"],21,70,"brioche");
+addFoodItem("Cheesecake",["cream cheese","sugar","sour cream","vanilla","butter","salt","eggs","graham cracker crumbs","seasonal fruits"],50,90,"cheesecake");
 
 
 itemList.innerHTML = writeAllOffers();
 refreshOfferView();
 refreshSummaryView();
 
-function FoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId,gluten) {
+function FoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId) {
 	this.name = name;
 	this.ingredients = ingredients;
 	this.pricePerKilogram = pricePerKilogram;
 	this.pieceWeight = pieceWeight;
 	this.price = Math.round(((pieceWeight/1000)*pricePerKilogram)*10)/10;
-	
 	this.imgId = imgId;
 	this.image = '<img src="img/'+imgId+'.jpg">';
 	this.allergensAlert = allergensAlert(ingredients);
-	this.gluten = gluten;
 }
 
-function DrinkItem(name, ingredients, price, volume, imgId,gluten) {
+function DrinkItem(name, ingredients, price, volume, imgId) {
 	this.name = name;
 	this.ingredients = ingredients;
 	this.price = price;
@@ -54,11 +51,10 @@ function DrinkItem(name, ingredients, price, volume, imgId,gluten) {
 	this.imgId = imgId;
 	this.image = '<img src="img/'+imgId+'.jpg">';
 	this.allergensAlert = allergensAlert(ingredients);
-	this.gluten = gluten;
 }
 
 function allergensAlert(ingredients) {
-	if(ingredients.includes('hazelnuts grain') || ingredients.includes('hazelnut syrup') || ingredients.includes('hazelnuts') || ingredients.includes('pistachio grain') || ingredients.includes('pistachio cream') || ingredients.includes('ground almonds')) {
+	if(ingredients.includes('hazelnuts grain') || ingredients.includes('hazelnut syrup') || ingredients.includes('hazelnuts') || ingredients.includes('pistachio grain') || ingredients.includes('pistachio cream') || ingredients.includes('ground almonds') || ingredients.includes('pistachios')) {
 		return  "CONTAINS NUTS";
 	}
 	else return "";
@@ -79,24 +75,22 @@ function writeOffer(offerId) {
 	if(Offer.get(offerId).name)  offerDescription += '<div class="name">'+Offer.get(offerId).name+'</div>'; 
 	if(Offer.get(offerId).pricePerKilogram) offerDescription += '<div class="pricePerKilogram">'+Offer.get(offerId).pricePerKilogram+' EUR per kg</div>';
 	if(Offer.get(offerId).pieceWeight) offerDescription += '<div class="pieceWeight"> | weight '+Offer.get(offerId).pieceWeight+' g</div>';
-
 	if(Offer.get(offerId).volume) offerDescription += '<div class="volume">volume '+Offer.get(offerId).volume+' ml</div>';
 	if(Offer.get(offerId).price) offerDescription += '<div class="price">'+Offer.get(offerId).price+' EUR</div>';
 	offerDescription += '<div class="image-container"><div class="image">' + Offer.get(offerId).image + '</div></div>';
-	if(Offer.get(offerId).gluten) offerDescription += '<div class="gluten"><img src="img/gluten_free.jpg"></div>';
 	offerDescription += '<div data-offerid="'+offerId+'"class="select">Dodaj</div>';
 	offerDescription += '</div>';
 	return offerDescription;
 }
 
-function addFoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId,gluten) {
+function addFoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId) {
 	let newOfferId = 'Item'+(Offer.size+1);
-	Offer.set(newOfferId,new FoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId,gluten));
+	Offer.set(newOfferId,new FoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId));
 }
 
-function addDrinkItem(name, ingredients, price, volume, imgId,gluten) {
+function addDrinkItem(name, ingredients, price, volume, imgId) {
 	let newOfferId = 'Item'+(Offer.size+1);
-	Offer.set(newOfferId,new DrinkItem(name, ingredients, price, volume, imgId,gluten));
+	Offer.set(newOfferId,new DrinkItem(name, ingredients, price, volume, imgId));
 }
 
 function deleteSelectedItem(selectedItemIndex) {
@@ -105,7 +99,7 @@ function deleteSelectedItem(selectedItemIndex) {
 }
 
 function addSelectedItemDelete() {
-	const deleteLinks = document.querySelectorAll('.selectedDelete');
+	const deleteLinks = document.querySelectorAll('.delete--selected');
 	for(let deleteLink of deleteLinks) {
 		deleteLink.addEventListener('click', function() {
 			deleteSelectedItem(this.dataset.selectedItemIndex);
@@ -119,17 +113,17 @@ function writeSelectedItems() {
 	for(i=0; i<Summary.length; i++) {
 		offerList += writeSelectedItem(i);
 	}	
-	return '<div class="summaryHeader">My Order</div>' +offerList;
+	return '<div class="summary__header">My Order</div>' +offerList;
 }
 
 function writeSelectedItem(selectedItemIndex) {
-    let offerDescription ='<div class="offerSummary">';
-	if(Summary.at(selectedItemIndex).name)  offerDescription += '<div class="summary name-summary">'+Summary.at(selectedItemIndex).name+'</div>'; 
-	if(Summary.at(selectedItemIndex).pieceWeight) offerDescription += '<div class="summary pieceWeight-summary"> '+Summary.at(selectedItemIndex).pieceWeight+' g</div>';
-	if(Summary.at(selectedItemIndex).volume)  offerDescription += '<div class="summary volume-summary"> '+Summary.at(selectedItemIndex).volume+' ml</div>'; 
-	offerDescription += '<div data-selected-item-index="'+selectedItemIndex+'"class="selectedDelete"><i class="icon-trash-empty"></i></div>';
-	offerDescription += '<div class="summary quantity-box"><div data-selected-item-index="'+selectedItemIndex+'" class="quantityMinus quantity"> - </div><div class="quantity quantityNumber">'+SummaryQuantities.get(JSON.stringify(Summary.at(selectedItemIndex)))+'</div><div data-selected-item-index="'+selectedItemIndex+'" class="quantityPlus quantity"> + </div></div>';
-	if(Summary.at(selectedItemIndex).price)  offerDescription += '<div class="summary price-summary"> '+Summary.at(selectedItemIndex).price*SummaryQuantities.get(JSON.stringify(Summary.at(selectedItemIndex)))+' EUR</div>'; 
+    let offerDescription ='<div class="summary__content">';
+	if(Summary.at(selectedItemIndex).name)  offerDescription += '<div class="summary summary__name">'+Summary.at(selectedItemIndex).name+'</div>'; 
+	if(Summary.at(selectedItemIndex).pieceWeight) offerDescription += '<div class="summary summary__pieceWeight"> '+Summary.at(selectedItemIndex).pieceWeight+' g</div>';
+	if(Summary.at(selectedItemIndex).volume)  offerDescription += '<div class="summary summary__volume"> '+Summary.at(selectedItemIndex).volume+' ml</div>'; 
+	offerDescription += '<div data-selected-item-index="'+selectedItemIndex+'"class="delete--selected"><i class="icon-trash-empty"></i></div>';
+	offerDescription += '<div class="summary quantity__box"><div data-selected-item-index="'+selectedItemIndex+'" class="quantityMinus quantity"> - </div><div class="quantity quantityNumber">'+SummaryQuantities.get(JSON.stringify(Summary.at(selectedItemIndex)))+'</div><div data-selected-item-index="'+selectedItemIndex+'" class="quantityPlus quantity"> + </div></div>';
+	if(Summary.at(selectedItemIndex).price)  offerDescription += '<div class="summary summary__price"> '+Summary.at(selectedItemIndex).price*SummaryQuantities.get(JSON.stringify(Summary.at(selectedItemIndex)))+' EUR</div>'; 
     offerDescription += '</div>';
 	return offerDescription;
 }
@@ -147,9 +141,8 @@ function addSelectedItemAdd() {
 					let pricePerKilogram = Offer.get(this.dataset.offerid).pricePerKilogram;
 					let pieceWeight = Offer.get(this.dataset.offerid).pieceWeight;
 					let imgId = Offer.get(this.dataset.offerid).imgId;
-					let gluten = Offer.get(this.dataset.offerid).gluten;
 						
-					object= new FoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId,gluten);
+					object= new FoodItem(name, ingredients, pricePerKilogram, pieceWeight,imgId);
 				}
 				else {
 					let name = Offer.get(this.dataset.offerid).name;
@@ -157,9 +150,8 @@ function addSelectedItemAdd() {
 					let price = Offer.get(this.dataset.offerid).price;
 					let volume = Offer.get(this.dataset.offerid).volume;
 					let imgId = Offer.get(this.dataset.offerid).imgId;
-					let gluten = Offer.get(this.dataset.offerid).gluten;
 
-					object = new DrinkItem(name, ingredients, price, volume, imgId,gluten);					
+					object = new DrinkItem(name, ingredients, price, volume, imgId);					
 				}						
 				if(!SummaryQuantities.has(JSON.stringify(object))) {
 					Summary.push(object);
@@ -263,7 +255,7 @@ function refreshSummaryView() {
 function writeTotalPrice() {
 	let totalprice = 0;
 	Summary.forEach((element) => totalprice += element.price * SummaryQuantities.get(JSON.stringify(element)));
-	total.innerHTML =  '<span class="summary total">Total</span><span class="total__price">'+ totalprice+' EUR</span><span class="summary order"><a href="end_of_order.html">Checkout</a></span>';
+	total.innerHTML =  '<span class="summary total">Total</span><span class="total__price">'+ totalprice+' EUR</span><span class="summary checkout"><a href="end_of_order.html">Checkout</a></span>';
 }
 
 function quantityPlus() {
