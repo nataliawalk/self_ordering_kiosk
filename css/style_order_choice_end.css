@@ -13,14 +13,14 @@ body {
 }
 
 .main__container--page1 {
-    margin-top: 200px;
+    margin-top: 10rem;
     height: 50vh;
 }
 
 .text--page1 {
     color: #000;
     font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 .text--question {
@@ -43,17 +43,15 @@ body {
 }
 
 .box {
-    width: 300px;
-    height: 350px;
-    border-radius: 20px;
+    width: 15rem;
+    height: 17.5rem;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0 ,0 , 0.15);
-    -moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
-
+    -webkit-box-shadow: 0 0 1.2rem 0 rgba(0, 0 ,0 , 0.15);
+    -moz-box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.15);
     transition: background-color 0.5s, color 0.5s;
 }
 
@@ -66,14 +64,14 @@ body {
 /* end_of_order page */
 
 .main__container--pagelast {
-    margin-top: 140px;
+    margin-top: 7rem;
     height: 50vh;
 }
 
 .text--pagelast {
     color: #000;
     font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 img {
@@ -104,16 +102,16 @@ img {
 }
 
 .button--neworder {
-    font-size: 30px;
-    width: 250px;
-    padding: 10px;
-    border-radius: 35px;
+    font-size: 1.5rem;
+    width: 12.5rem;
+    padding: 0.5rem;
+    border-radius: 1.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0 ,0 , 0.15);
-    -moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 1.2rem 0 rgba(0, 0 ,0 , 0.15);
+    -moz-box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.15);
     transition: background-color 0.5s, color 0.5s;
 }
 
@@ -121,39 +119,3 @@ img {
     color: #fff;
     background-color: #000;
 }
-
-
-
-
-
-
-
-
-/* old button  */
-
-
-
-/* .button--neworder {
-    font-size: 35px;
-    width: 250px;
-    padding: 10px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: box-shadow 0.2s;
-    background-color: #000;
-}
-
-.button--neworder a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.button--neworder:hover {
-    -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.4);
-
-    cursor: pointer;
-} */

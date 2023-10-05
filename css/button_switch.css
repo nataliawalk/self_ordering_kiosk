@@ -1,40 +1,30 @@
-html {
-	font-size: 20px;
-}
-
-.switch-button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.switchButton {
 	font-weight: 400;
     font-family: 'Quicksand', sans-serif;
     position: absolute;
-    top: calc(2rem + 80px + 1.5rem);
+    top: calc(2rem + 4rem + 1.6rem);
     right: 4rem;
 } 
 
-.box {
-	display: inline-block;
+.switchButton__box {
 	width: 8rem;
-	height: 1.5rem;
 	border: 1px solid black;
-	border-radius: 1.5rem;
-	position: relative;
+	border-radius: 1rem;
 	font-size: 1.1rem;
 	padding-left: 1.2rem;
-	padding-right: 0.5rem;
+	padding-right: 0.2rem;
 	padding-top: 0.2rem;
 	padding-bottom: 0.2rem;
 }
 
 #boxInside {
 	background-color: black;
-	width: 5rem;
-	height: 1.9rem;
-	border-radius: 30px;
+	width: 50%;
+	height: 100%;
+	border-radius: 1.5rem;
 	position: absolute;
-	left: 0px;
-	top: 0px;
+	left: 0;
+	top: 0;
     z-index: -1;
 }
 
@@ -58,7 +48,7 @@ html {
 
 @keyframes move-left {
 	from {
-		-webkit-transform: translateX(0px);
+		-webkit-transform: translateX(0);
 	}
 	to {
 		-webkit-transform: translateX(4.7rem);
@@ -70,6 +60,6 @@ html {
 		-webkit-transform: translateX(4.7rem);
 	}
 	to {
-		-webkit-transform: translateX(0px);	
+		-webkit-transform: translateX(0);	
 	}
 }
