@@ -119,3 +119,12 @@ img {
     color: #fff;
     background-color: #000;
 }
+
+
+@media (max-width: 350px) {
+    .box {
+        width: calc(0.8*15rem);
+        height: calc(0.8*17.5rem);
+        border-radius: 1rem;
+    }
+}
