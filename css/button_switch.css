@@ -2,7 +2,7 @@
 	font-weight: 400;
     font-family: 'Quicksand', sans-serif;
     position: absolute;
-    top: calc(2rem + 4rem + 1.6rem);
+    top: calc(2rem + 4rem + 1.8rem);
     right: 4rem;
 } 
 
@@ -63,3 +63,4 @@
 		-webkit-transform: translateX(0);	
 	}
 }
+
