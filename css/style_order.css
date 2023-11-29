@@ -20,6 +20,7 @@ body {
 
 .summary__container{
 	width: 35%;
+	/* min-width: 580px; */
 	background-color: #f0f0f0;
 	border: 1px solid #fff;
 	border-radius: 2rem;
@@ -90,7 +91,8 @@ body {
 	margin: 0.8rem 1rem;
 	background-color: #ffffff;
 	display: grid;
-	grid-template-columns: 35% 10% 20% 15% 20%;
+	/* grid-template-columns: 35% 10% 20% 15% 20%; */
+	grid-template-columns: 38% 10% 17% 15% 20%;
 	align-items: center;
 }
 
@@ -133,6 +135,7 @@ body {
 	display:flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .quantityPlus {
@@ -324,10 +327,51 @@ body {
 	font-weight: 700;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 630px) {
 	.footer {
 		grid-template-columns: 20% 0.5rem 8rem auto 3rem;
 	}
+	.summary__content {
+		border-radius: 1.8rem;
+		height: 3rem;
+		font-size: 0.9rem;
+		/* margin: 0.8rem 1rem; */
+		grid-template-columns: 35% 12% 15% 18% 20%;
+	}
+}
+@media (min-width: 630px) and (max-width: 1440px) {
+	.footer {
+		grid-template-columns: 30% 0.5rem 8rem auto 4rem;
+	}
+	.summary__content {
+		border-radius: 2.5rem;
+		height: 5rem;
+		font-size: 1.5rem;
+		/* margin: 0.8rem 1rem; */
+		grid-template-columns: 30% 8% 27% 15% 20%;
+	}
+	.summary__header {
+
+		font-size: 2rem;
+		/* margin: 1.5rem 0 1rem 1rem; */
+	}
+	.menu__header {
+		font-size: 2rem;
+		/* margin: 0 0 1rem 0; */
+	}
+	.quantityPlus {
+		border-radius: 2rem;
+		min-width: 2rem;
+		height: 2rem;
+	}
+	.quantityMinus {
+		border-radius: 2rem;
+		min-width: 2rem;
+		height: 2rem;
+	}
+}
+
+@media (max-width: 1440px) {
 	.main__container--page3 {
 		flex-direction: column-reverse;
 	}
@@ -364,7 +408,6 @@ body {
 	.price {
 		font-size: 1.8rem;
 	}
-
 	.pricePerKilogram {
 		font-size: 1.5rem;
 	}
@@ -372,13 +415,11 @@ body {
 	.pieceWeight {
 		font-size: 1.5rem;
 	}
-
 	.image-container {
 		width: 20rem;
 		height: 20rem;
 		border-radius: 1.5rem;
 	}
-
 	.select {
 		border-radius: 1.6rem;
 		font-size: 1.8rem;
@@ -406,9 +447,8 @@ body {
 	}
 }
 
-@media (min-width: 430px) and (max-width: 1024px) {
-	.footer {
-		grid-template-columns: 30% 0.5rem 8rem auto 4rem;
+@media (min-width: 2560px) {
+	.summary__container {
+		width: 35%;
 	}
-
 }
