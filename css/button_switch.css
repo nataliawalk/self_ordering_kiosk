@@ -64,3 +64,8 @@
 	}
 }
 
+@media (min-width: 630px) and (max-width: 1440px) {
+	.switchButton {
+		top: calc(2rem + 4rem + 2.1rem);
+	} 
+}
